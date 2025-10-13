@@ -13,7 +13,7 @@ fun readInt(input: String): Int {
     }
 }
 
-fun rollDie(sides: Int) {
+fun rollDie(sides: Int = 4) {
     if (sides in setOf(4, 6, 8, 10, 12, 20)) {
         println("Rolling a d$sides...")
         val result = Random.nextInt(1, sides + 1)
@@ -30,8 +30,8 @@ fun main() {
         val input = readln().trim().lowercase()
 
         if (input.isBlank()) {
-            println("Input cannot be blank. Please try again.")
-            continue
+            println("Default dice is used.")
+            rollDie()
         }
         if (input == "exit") {
             break
@@ -51,8 +51,3 @@ fun main() {
     }
     println("Thanks for playing!")
 }
-
-
-
-
-
