@@ -2,9 +2,10 @@
 
 infix fun String.anagramOf(other: String) = when {
     this.length != other.length -> false
+    this.length == 0 && other.length == 0 -> false
     else -> {
         val theseChars = this.lowercase().toList().sorted()
         val otherChars = other.lowercase().toList().sorted()
-        theseChars == otherChars   
+        theseChars == otherChars
     }
 }
