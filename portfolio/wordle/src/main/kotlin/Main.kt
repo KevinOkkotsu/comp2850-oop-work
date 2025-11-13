@@ -20,19 +20,21 @@ fun main() {
 
         displayGuess(guess, matches)
 
+        // if all numbers in matches is 2
         if (matches.all { it==2 }) {
             win = true
-            println("You have guessed the word of the day: ${targetWord}")
+            println("You have guessed the word of the day: ${targetWord}\n")
             break
         }
+        // if any numbers in matches are 1 or 2
         if (matches.any { it==1 || it==2 }) {
-            println("You have guessed a letter(s)!")
+            println("You have guessed a letter(s)!\n")
         }
         else {
-            println("Incorrect guess. Try again! (You have ${6-attempt} tries remaining)")
+            println("Incorrect guess. Try again! (You have ${6-attempt} tries remaining)\n")
         }
     }
     if (win == false) {
-        println("\nYou have ran out of tries. The word of the day is: ${targetWord}\n")
+        println("You have ran out of tries. The word of the day is: ${targetWord}\n")
     }
 }
